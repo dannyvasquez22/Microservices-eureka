@@ -6,3 +6,9 @@ config:
         secret: 12345
       jwt:
         key: algun_codigo_secreto_aeiou
+
+spring:
+  zipkin:
+    baseUrl: http://zipkin-server:9411/
+  rabbitmq:
+    host: microservicios-rabbitmq38
