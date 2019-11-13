@@ -1,0 +1,23 @@
+spring:
+  banner:
+    location: classpath:banner/banner.txt
+  application:
+    name: servicio-items
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8888
+
+management:
+  endpoints:
+    web: 
+      exposure:
+        include: "*"
+
+server: 
+  port: 8002
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka

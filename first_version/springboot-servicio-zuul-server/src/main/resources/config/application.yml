@@ -1,0 +1,34 @@
+spring:
+  banner:
+    location: classpath:banner/banner.txt
+  application:
+    name: servicio-zuul-server
+
+server:
+  port: 8090
+
+eureka:
+  client:
+    serviceUrl: 
+      defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  routes:
+    productos:
+      serviceId: servicio-productos
+      path: "/api/productos/**"
+    items:
+      serviceId: servicio-items
+      path: "/api/items/**"
+
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 20000
+
+#ribbon:
+#  ConnectTimeout: 3000
+#  ReadTimeout: 10000
